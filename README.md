@@ -38,6 +38,7 @@ https://blog.daliansky.net/macOS-Catalina-10.15.3-19D76-Release-version-with-Clo
 + VoodooPS2Controller_v1.9.2.kext这个驱动不建议用acidanthera的新版，触摸板会不可用
 + 有一定概率会在连接hdmi启动时亮度重置，原因未知
 + USBInjectAll.kext是根据主板定制好的，不要更换成其他
++ 我认为电池电量是不准的
 
 ## 说明:
 DSDT.aml 加入了亮度方法 _Q8E和_Q8F
