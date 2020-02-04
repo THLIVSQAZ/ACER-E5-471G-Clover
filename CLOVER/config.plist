@@ -288,6 +288,8 @@
 		<false/>
 		<key>KernelPm</key>
 		<true/>
+		<key>PanicNoKextDump</key>
+		<true/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
