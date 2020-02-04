@@ -25,7 +25,7 @@
 				<key>FixRTC</key>
 				<true/>
 				<key>FixTMR</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>Patches</key>
 			<array>
@@ -99,16 +99,6 @@
 					<key>Replace</key>
 					<data>WEhDXw==</data>
 				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename XHC1 to XHC (USB)</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>WEhDMQ==</data>
-					<key>Replace</key>
-					<data>WEhDXw==</data>
-				</dict>
 			</array>
 		</dict>
 		<key>FixHeaders</key>
@@ -128,7 +118,6 @@
 		<key>SortedOrder</key>
 		<array>
 			<string>SSDT-XOSI.aml</string>
-			<string>SSDT-IGPU.aml</string>
 			<string>SSDT-PNLF.aml</string>
 		</array>
 	</dict>
@@ -137,7 +126,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>nv_disable=1 kext-dev-mode=1 debug=0x100 -alcbdbg -liludbg -wegnoegpu slide=129 -v</string>
+		<string>nv_disable=1 kext-dev-mode=1 debug=0x100 -wegnoegpu slide=129 -v</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -154,6 +143,8 @@
 	<string>This file is for Broadwell graphics that are natively supported</string>
 	<key>Devices</key>
 	<dict>
+		<key>LANInjection</key>
+		<false/>
 		<key>Properties</key>
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
@@ -216,11 +207,11 @@
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
-			<true/>
+			<false/>
 			<key>FixOwnership</key>
-			<true/>
+			<false/>
 			<key>Inject</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>DisableDrivers</key>
@@ -307,19 +298,6 @@
 		<false/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KernelToPatch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>ILniAAAADzA=</data>
-				<key>Replace</key>
-				<data>ILniAAAAkJA=</data>
-			</dict>
-		</array>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
