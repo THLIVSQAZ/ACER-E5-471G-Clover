@@ -32,7 +32,7 @@ VGA&radic;
 ## 不工作:
 wifi&蓝牙&times; (可以在咸鱼上收一个BCM94352HMB，wifi直接免驱，蓝牙放入三个kext就可以了)
 
-多点触控I2C&times;（ACPI缺少太多）
+多点触控I2C&times;（ACPI缺少过多）
 
 读卡器&times;
 
@@ -44,18 +44,26 @@ https://blog.daliansky.net/macOS-Catalina-10.15.3-19D76-Release-version-with-Clo
 
 ## 注意：
 + 触摸板请在bios里面把驱动改成basic，不要用Advance,不然键盘和触摸板会挂
-+ 如果你没有换无线网卡，请把kexts/Other/BrcmBluetoothInjector.kext BrcmFirmwareData.kext BrcmPatchRAM3.kext删掉，免得启动不了
-+ VoodooPS2Controller_v1.9.2.kext这个驱动不建议用acidanthera的新版，触摸板会不可用
++ 如果你没有换无线网卡，请把kexts/Other/下的&nbsp;&nbsp;BrcmBluetoothInjector.kext&nbsp;&nbsp;BrcmFirmwareData.kext BrcmPatchRAM3.kext&nbsp;&nbsp;删掉，免得启动不了
++ VoodooPS2Controller_v1.9.2.kext&nbsp;这个驱动不建议用acidanthera的新版，触摸板会不可用
 + 有一定概率会在连接hdmi启动时亮度重置，原因未知
-+ USBInjectAll.kext是根据主板定制好的，不要更换成其他
++ USBInjectAll.kext&nbsp;是根据主板定制好的，不要更换成其他
 + 我认为电池电量是不准的
 + 如果你想进入acer bios的高级选项，可以进行这个骚操作：f2进入bios，按住fn+tab三秒，保存退出，再次f2进入bios，就可以看见Advance选项和power选项
 
 ## 说明:
-DSDT.aml 加入了亮度方法 _Q8E和_Q8F
-SSDT-PNLF.aml 亮度控制补丁
-SSDT-XOSI.aml 操作系统方法补丁，缺少引导卡死
+
+DSDT.aml 去除了XSEL，ESEL方法造成的引导卡住(同等于XHCI->XHC补丁)
+
+SSDT-PNLF.aml 背光亮度控制补丁
+
+SSDT-XOSI.aml 操作系统方法补丁，缺少引导卡住
+
+SSDT-Fn.aml fn亮度按键
+
 config.plist内还有usb和其他ACPI的修复，自行查看
+
+---
 
 ![pic1](./RAW/pic1.png)
 ![pic2](./RAW/pic2.png)
