@@ -109,6 +109,7 @@
 		<array>
 			<string>SSDT-XOSI.aml</string>
 			<string>SSDT-PNLF.aml</string>
+			<string>SSDT-Fn.aml</string>
 		</array>
 	</dict>
 	<key>Boot</key>
